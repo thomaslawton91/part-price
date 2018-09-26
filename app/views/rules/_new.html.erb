@@ -19,7 +19,7 @@
       <hr>
       Reporting Make: <%= select(:rule, :reporting_make, Sku.pluck(:reporting_make).uniq, { include_blank: true }) %>
       </br>
-      Brand Name: <%= select(:rule, :brand_name, Sku.order(:brand_name :asc).pluck(:brand_name).uniq, { include_blank: true }) %>
+      Brand Name: <%= select(:rule, :brand_name, Sku.opluck(:brand_name).uniq, { include_blank: true }) %>
       </br>
       Category Name: <%= select(:rule, :category_name, Sku.pluck(:category_name).uniq, { include_blank: true }) %>
       </br>
