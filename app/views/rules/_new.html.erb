@@ -1,0 +1,37 @@
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal">x</button>
+  <h4 class="modal-title" id="myModalLabel">New Rule</h4>
+</div>
+
+<div class="modal-body">
+  <%= form_for @rule do |f| %>
+    <div class="field">
+      Select a base price:
+      <hr>
+      JIT Cogs: <%= f.check_box :jit_cogs %></br>
+      Domestic Stocking Cogs: <%= f.check_box :domestic_stocking_cogs %></br>
+      Best Stocking Cogs: <%= f.check_box :best_stocking_cogs %></br>
+      Genuine Price: <%= f.check_box :genuine_price %></br>
+    </div>
+    </br>
+    <div class="field">
+      Create your pricing rule:
+      <hr>
+      Reporting Make: <%= select(:rule, :reporting_make, Sku.pluck(:reporting_make).uniq, { include_blank: true }) %>
+      </br>
+      Brand Name: <%= select(:rule, :brand_name, Sku.order(:brand_name :asc).pluck(:brand_name).uniq, { include_blank: true }) %>
+      </br>
+      Category Name: <%= select(:rule, :category_name, Sku.pluck(:category_name).uniq, { include_blank: true }) %>
+      </br>
+      Subcategory Name: <%= select(:rule, :sub_category_name, Sku.pluck(:sub_category_name).uniq, { include_blank: true }) %>
+      </br>
+      Functional Name: <%= select(:rule, :functional_name, Sku.pluck(:functional_name).uniq, { include_blank: true }) %>
+      </br>
+    </div>
+    <div class="modal-footer">
+      <%= f.submit 'Create Rule', class: "btn btn-primary" %>
+    </div>
+
+  <% end %>
+
+</div>
