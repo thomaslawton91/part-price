@@ -12,7 +12,7 @@ csv = CSV.parse(csv_text, headers: true, encoding: 'ISO-8859-1')
 Sku.delete_all
 csv.each do |row|
   s = Sku.new
-  s.label = row['sku_label']
+  s.sku_label = row['sku_label']
   s.jit_cogs = row['jit_cogs']
   s.domestic_stocking_cogs = row['domestic_stocking_cogs']
   s.best_stocking_cogs = row['best_stocking_cogs']

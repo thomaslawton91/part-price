@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_26_194206) do
+ActiveRecord::Schema.define(version: 2018_09_27_035951) do
+
+  create_table "discounted_parts", force: :cascade do |t|
+    t.float "price"
+    t.string "sku_label"
+    t.string "reporting_make"
+    t.string "brand_name"
+    t.string "category_name"
+    t.string "sub_category_name"
+    t.string "functional_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "rules", force: :cascade do |t|
     t.string "relative_price"
@@ -25,7 +37,7 @@ ActiveRecord::Schema.define(version: 2018_09_26_194206) do
   end
 
   create_table "skus", force: :cascade do |t|
-    t.string "label"
+    t.string "sku_label"
     t.float "jit_cogs"
     t.float "domestic_stocking_cogs"
     t.float "best_stocking_cogs"

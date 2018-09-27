@@ -15,6 +15,7 @@ class RulesController < ApplicationController
   def create
     @rule = Rule.new(rule_params)
     if @rule.save
+      RulesWorker.perform_async(@rule.id)
       redirect_to rules_url
     else
       flash[:notice] = "Something wwent wrong"

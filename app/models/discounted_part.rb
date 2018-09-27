@@ -1,0 +1,2 @@
+class DiscountedPart < ApplicationRecord
+end

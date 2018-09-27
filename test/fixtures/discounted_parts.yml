@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  price: 1.5
+  sku_name: MyString
+  reporting_make: MyString
+  brand_name: MyString
+  category_name: MyString
+  sub_category_name: MyString
+  functional_name: MyString
+
+two:
+  price: 1.5
+  sku_name: MyString
+  reporting_make: MyString
+  brand_name: MyString
+  category_name: MyString
+  sub_category_name: MyString
+  functional_name: MyString

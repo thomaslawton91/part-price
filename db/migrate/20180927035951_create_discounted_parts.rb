@@ -1,11 +1,8 @@
-class CreateSkus < ActiveRecord::Migration[5.2]
+class CreateDiscountedParts < ActiveRecord::Migration[5.2]
   def change
-    create_table :skus do |t|
+    create_table :discounted_parts do |t|
+      t.float :price
       t.string :sku_label
-      t.float :jit_cogs
-      t.float :domestic_stocking_cogs
-      t.float :best_stocking_cogs
-      t.float :genuine_price
       t.string :reporting_make
       t.string :brand_name
       t.string :category_name
