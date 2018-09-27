@@ -1,11 +1,22 @@
-<%= link_to 'Create Rule', new_rule_path,  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window', class: 'btn btn-primary btn-lg'}  %>
+<%= link_to 'Create Rule', new_rule_path,  {:remote => true, 'data-toggle' =>  'modal', 'data-target' => '#modal-window', class: 'btn btn-primary btn-lg', id:'modal-button'}  %>
 
-<div id="modal-window" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content"></div>
+<% @rules.each do |rule| %>
+  <% rule.attributes.each do |attr_name, attr_value| %>
+    <% if attr_value != "" %>
+    <p>
+      <%= attr_name %>: <%= attr_value %>
+      <% end %>
+    </p>
+    <% end %>
+    <hr>
+<% end %>
+
+<div id='modal-window' class='modal hide fade' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true'>
+  <div class='modal-dialog' role='document'>
+    <div class='modal-content'></div>
   </div>
 </div>
 
 <% if flash[:notice] %>
-  <div class="notice"><%= flash[:notice] %></div>
+  <div class='notice'><%= flash[:notice] %></div>
 <% end %>

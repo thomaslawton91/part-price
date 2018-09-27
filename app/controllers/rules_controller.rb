@@ -15,7 +15,7 @@ class RulesController < ApplicationController
   def create
     @rule = Rule.new(rule_params)
     if @rule.save
-      flash[:notice] = "Success"
+      redirect_to rules_url
     else
       flash[:notice] = "Something wwent wrong"
     end
@@ -24,6 +24,6 @@ class RulesController < ApplicationController
   private
 
   def rule_params
-    params.require(:rule).permit(:jit_cogs, :domestic_stocking_cogs, :best_stocking_cogs, :genuine_price, :reporting_make, :brand_name, :category_name, :sub_category_name, :functional_name)
+    params.require(:rule).permit(:relative_price, :discount, :reporting_make, :brand_name, :category_name, :sub_category_name, :functional_name)
   end
 end

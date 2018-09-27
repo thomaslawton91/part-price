@@ -13,10 +13,8 @@
 ActiveRecord::Schema.define(version: 2018_09_26_194206) do
 
   create_table "rules", force: :cascade do |t|
-    t.boolean "jit_cogs"
-    t.boolean "domestic_stocking_cogs"
-    t.boolean "best_stocking_cogs"
-    t.boolean "genuine_price"
+    t.string "relative_price"
+    t.float "discount"
     t.string "reporting_make"
     t.string "brand_name"
     t.string "category_name"
