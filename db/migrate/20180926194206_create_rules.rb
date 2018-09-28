@@ -2,7 +2,7 @@ class CreateRules < ActiveRecord::Migration[5.2]
   def change
     create_table :rules do |t|
       t.string :relative_price
-      t.float  :discount
+      t.money  :discount
       t.string :reporting_make
       t.string :brand_name
       t.string :category_name

@@ -19,7 +19,7 @@
     <div class='field'>
       Create your pricing rule:
       <hr>
-      Reporting Make: <%= f.select(:reporting_make, Sku.order(reporting_make: :asc).pluck('DISTINCT reporting_make'), { include_blank: true }) %>
+      Reporting Make: <%= f.select :reporting_make, Sku.order(reporting_make: :asc).pluck('DISTINCT reporting_make'), { include_blank: true } %>
       </br>
       Brand Name: <%= f.select :brand_name, Sku.order(brand_name: :asc).pluck('DISTINCT brand_name'), { include_blank: true } %>
       </br>

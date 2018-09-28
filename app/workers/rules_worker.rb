@@ -34,6 +34,7 @@ class RulesWorker
       part.reporting_make = attributes['reporting_make']
       part.brand_name = attributes['brand_name']
       part.category_name = attributes['category_name']
+      part.sub_category_name = attributes['sub_category_name']
       part.functional_name = attributes['functional_name']
       if DiscountedPart.exists?(sku_label: attributes['sku_label'])
         DiscountedPart.update_all({price: part.price})

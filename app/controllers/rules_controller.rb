@@ -1,8 +1,18 @@
 class RulesController < ApplicationController
   def index
     @rules = Rule.all
+    @discounts = DiscountedPart.all
+    respond_to do |format|
+      format.html
+      format.csv { send_data @discounts.to_csv }
+    end
   end
 
+  def import
+    Sku.import(params[:file])
+    redirect_to root_url, notice: 'Skus have been imported'
+  end
+  
   def new
     @skus = Sku.all
     @rule = Rule.new
@@ -14,6 +24,7 @@ class RulesController < ApplicationController
 
   def create
     @rule = Rule.new(rule_params)
+    @rule.save
     if @rule.save
       RulesWorker.perform_async(@rule.id)
       redirect_to rules_url

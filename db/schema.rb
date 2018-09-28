@@ -12,8 +12,11 @@
 
 ActiveRecord::Schema.define(version: 2018_09_27_035951) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "discounted_parts", force: :cascade do |t|
-    t.float "price"
+    t.money "price", scale: 2
     t.string "sku_label"
     t.string "reporting_make"
     t.string "brand_name"
@@ -26,7 +29,7 @@ ActiveRecord::Schema.define(version: 2018_09_27_035951) do
 
   create_table "rules", force: :cascade do |t|
     t.string "relative_price"
-    t.float "discount"
+    t.money "discount", scale: 2
     t.string "reporting_make"
     t.string "brand_name"
     t.string "category_name"
@@ -38,10 +41,10 @@ ActiveRecord::Schema.define(version: 2018_09_27_035951) do
 
   create_table "skus", force: :cascade do |t|
     t.string "sku_label"
-    t.float "jit_cogs"
-    t.float "domestic_stocking_cogs"
-    t.float "best_stocking_cogs"
-    t.float "genuine_price"
+    t.money "jit_cogs", scale: 2
+    t.money "domestic_stocking_cogs", scale: 2
+    t.money "best_stocking_cogs", scale: 2
+    t.money "genuine_price", scale: 2
     t.string "reporting_make"
     t.string "brand_name"
     t.string "category_name"
