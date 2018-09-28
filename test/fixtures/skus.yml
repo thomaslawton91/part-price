@@ -5,7 +5,7 @@ one:
   jit_cogs: 1.5
   domestic_stocking_cogs: 1.5
   best_stocking_cogs: 1.5
-  genuine_price: 1.5
+  genuineqprice: 1.5
   reporting_make: MyString
   brand_name: MyString
   category_name: MyString
@@ -17,7 +17,7 @@ two:
   jit_cogs: 1.5
   domestic_stocking_cogs: 1.5
   best_stocking_cogs: 1.5
-  genuine_price: 1.5
+  genuineqprice: 1.5
   reporting_make: MyString
   brand_name: MyString
   category_name: MyString

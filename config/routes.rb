@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root to: 'rules#index'
   resources :rules do
     collection { post :import }
   end

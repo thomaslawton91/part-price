@@ -10,9 +10,13 @@ class RulesController < ApplicationController
 
   def import
     Sku.import(params[:file])
-    redirect_to root_url, notice: 'Skus have been imported'
+    if :file.exists?
+      redirect_to root_url, notice: 'Skus have been imported'
+    else
+      redirect_to root_url notice: 'You must select a file'
+    end
   end
-  
+
   def new
     @skus = Sku.all
     @rule = Rule.new

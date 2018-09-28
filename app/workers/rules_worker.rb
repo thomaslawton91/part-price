@@ -28,7 +28,7 @@ class RulesWorker
       when 'best_stocking_cogs'
         part.price = attributes['best_stocking_cogs'].to_f * discount.to_f
       else
-        part.price = attributes['genuine_price'].to_f * discount.to_f
+        part.price = attributes['genuineqprice'].to_f * discount.to_f
       end
       part.sku_label = attributes['sku_label']
       part.reporting_make = attributes['reporting_make']

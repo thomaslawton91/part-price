@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2018_09_27_035951) do
     t.money "jit_cogs", scale: 2
     t.money "domestic_stocking_cogs", scale: 2
     t.money "best_stocking_cogs", scale: 2
-    t.money "genuine_price", scale: 2
+    t.money "genuineeqprice", scale: 2
     t.string "reporting_make"
     t.string "brand_name"
     t.string "category_name"

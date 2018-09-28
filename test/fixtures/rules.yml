@@ -4,7 +4,7 @@ one:
   jit_cogs: false
   domestic_stocking_cogs: false
   best_stocking_cogs: false
-  genuine_price: false
+  genuineqprice: false
   reporting_make: MyString
   brand_name: MyString
   category_name: MyString
@@ -15,7 +15,7 @@ two:
   jit_cogs: false
   domestic_stocking_cogs: false
   best_stocking_cogs: false
-  genuine_price: false
+  genuineqprice: false
   reporting_make: MyString
   brand_name: MyString
   category_name: MyString
