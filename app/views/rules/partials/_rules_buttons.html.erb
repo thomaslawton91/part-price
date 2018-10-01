@@ -1,0 +1,10 @@
+<div class='buttons'>
+  <%= link_to 'Create Rule', new_rule_path,  {:remote => true, 'data-toggle' =>  'modal', 'data-target' => '#modal-window', class: 'btn btn-primary', id:'modal-button'}  %>
+
+  <%= form_tag import_rules_path, multipart: true do %>
+    <%= file_field_tag :file, class: 'btn' %>
+    <%= submit_tag "Import SKUs", class: 'btn btn-primary' %>
+  <% end %>
+
+  <%= link_to 'Send Prices to CSV', rules_path(format: :csv), class: 'btn btn-primary' %>
+</div>

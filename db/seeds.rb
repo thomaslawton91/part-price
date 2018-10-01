@@ -14,7 +14,7 @@ csv.each do |row|
   s.jit_cogs = row['jit_cogs']
   s.domestic_stocking_cogs = row['domestic_stocking_cogs']
   s.best_stocking_cogs = row['best_stocking_cogs']
-  s.genuineqprice = row['genuineeqprice']
+  s.genuineeqprice = row['genuineeqprice']
   s.reporting_make = row['reporting_make']
   s.brand_name = row['brand_name']
   s.category_name = row['category_name']

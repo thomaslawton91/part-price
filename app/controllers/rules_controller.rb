@@ -9,11 +9,11 @@ class RulesController < ApplicationController
   end
 
   def import
-    Sku.import(params[:file])
-    if :file.exists?
-      redirect_to root_url, notice: 'Skus have been imported'
+    if params[:file].nil?
+      redirect_to root_url, danger: 'You must select a file for upload'
     else
-      redirect_to root_url notice: 'You must select a file'
+      Sku.import(params[:file])
+      redirect_to root_url, info: 'Skus have been imported'
     end
   end
 
@@ -31,9 +31,9 @@ class RulesController < ApplicationController
     @rule.save
     if @rule.save
       RulesWorker.perform_async(@rule.id)
-      redirect_to rules_url
+      redirect_to root_url, info: 'Rule created successfully'
     else
-      flash[:notice] = "Something wwent wrong"
+      flash[:danger] = 'Something went wrong'
     end
   end
 

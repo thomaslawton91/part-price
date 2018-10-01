@@ -1,0 +1,14 @@
+<div class='rules'>
+<hr>
+  <% @rules.each do |rule| %>
+    <strong> <h5> Rule #: <%= rule.id %> </h5> </strong>
+    <% rule.attributes.each do |attr_name, attr_value| %>
+      <% if attr_value != "" && attr_name != 'id' && attr_name != 'created_at' && attr_name != 'updated_at' %>
+      <p>
+        <strong> <%= attr_name %> </strong>: <%= attr_value %>
+      </p>
+      <% end %>
+    <% end %>
+      <hr>
+  <% end %>
+</div>

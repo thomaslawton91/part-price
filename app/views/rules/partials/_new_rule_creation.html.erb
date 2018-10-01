@@ -1,0 +1,31 @@
+<%= form_for @rule do |f| %>
+  <div class='field'>
+    Select a relative price:
+    <hr>
+    <%= f.select :relative_price, ['JIT Cogs', 'Domestic Stocking Cogs', 'Best Stocking Cogs', 'Genuine Price'] %>
+    </br>
+    <hr>
+    Enter a discount percentage from 1 - 100:
+    <%= f.text_field :discount %>%
+    <hr>
+  </div>
+  </br>
+  <div class='field'>
+    Create your pricing rule:
+    <hr>
+    Reporting Make: <%= f.select :reporting_make, Sku.order(reporting_make: :asc).pluck('DISTINCT reporting_make'), { include_blank: true } %>
+    </br>
+    Brand Name: <%= f.select :brand_name, Sku.order(brand_name: :asc).pluck('DISTINCT brand_name'), { include_blank: true } %>
+    </br>
+    Category Name: <%= f.select :category_name, Sku.order(category_name: :asc).pluck('DISTINCT category_name'), { include_blank: true } %>
+    </br>
+    Subcategory Name: <%= f.select :sub_category_name, Sku.order(sub_category_name: :asc).pluck('DISTINCT sub_category_name'), { include_blank: true } %>
+    </br>
+    Functional Name: <%= f.select :functional_name, Sku.order(functional_name: :asc).pluck('DISTINCT functional_name'), { include_blank: true } %>
+    </br>
+  </div>
+  <div class='modal-footer'>
+    <%= f.submit 'Create Rule', class: 'btn btn-primary' %>
+  </div>
+
+<% end %>
