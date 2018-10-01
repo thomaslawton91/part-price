@@ -12,7 +12,7 @@ class DiscountedPart < ApplicationRecord
     CSV.generate(headers: true) do |csv|
       csv << attributes
 
-      all.each do |discount|
+      find_each do |discount|
         csv << discount.attributes.values_at(*attributes)
       end
     end

@@ -1,25 +1,25 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  label: MyString
+  sku_label: MyString
   jit_cogs: 1.5
   domestic_stocking_cogs: 1.5
   best_stocking_cogs: 1.5
-  genuineqprice: 1.5
+  genuineeqprice: 1.5
   reporting_make: MyString
   brand_name: MyString
   category_name: MyString
   sub_category_name: MyString
-  fuctional_name: MyString
+  functional_name: MyString
 
 two:
-  label: MyString
+  sku_label: MyString
   jit_cogs: 1.5
   domestic_stocking_cogs: 1.5
   best_stocking_cogs: 1.5
-  genuineqprice: 1.5
+  genuineeqprice: 1.5
   reporting_make: MyString
   brand_name: MyString
   category_name: MyString
   sub_category_name: MyString
-  fuctional_name: MyString
+  functional_name: MyString

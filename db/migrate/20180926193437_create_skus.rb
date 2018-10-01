@@ -1,7 +1,7 @@
 class CreateSkus < ActiveRecord::Migration[5.2]
   def change
     create_table :skus do |t|
-      t.string :sku_label
+      t.string :sku_label, null: false
       t.money :jit_cogs
       t.money :domestic_stocking_cogs
       t.money :best_stocking_cogs

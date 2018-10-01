@@ -16,20 +16,20 @@ ActiveRecord::Schema.define(version: 2018_09_27_035951) do
   enable_extension "plpgsql"
 
   create_table "discounted_parts", force: :cascade do |t|
-    t.money "price", scale: 2
-    t.string "sku_label"
-    t.string "reporting_make"
-    t.string "brand_name"
-    t.string "category_name"
-    t.string "sub_category_name"
-    t.string "functional_name"
+    t.money "price", scale: 2, null: false
+    t.string "sku_label", null: false
+    t.string "reporting_make", null: false
+    t.string "brand_name", null: false
+    t.string "category_name", null: false
+    t.string "sub_category_name", null: false
+    t.string "functional_name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "rules", force: :cascade do |t|
-    t.string "relative_price"
-    t.money "discount", scale: 2
+    t.string "relative_price", null: false
+    t.money "discount", scale: 2, null: false
     t.string "reporting_make"
     t.string "brand_name"
     t.string "category_name"
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 2018_09_27_035951) do
   end
 
   create_table "skus", force: :cascade do |t|
-    t.string "sku_label"
+    t.string "sku_label", null: false
     t.money "jit_cogs", scale: 2
     t.money "domestic_stocking_cogs", scale: 2
     t.money "best_stocking_cogs", scale: 2
