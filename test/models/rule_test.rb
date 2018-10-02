@@ -5,6 +5,11 @@ class RuleTest < ActiveSupport::TestCase
     @rule = rules :valid
   end
 
+  def teardown
+    Rule.delete_all
+    @rule = nil
+  end
+
   test 'valid rule' do
     assert @rule.valid?
   end
@@ -22,7 +27,8 @@ class RuleTest < ActiveSupport::TestCase
   end
 
   test 'test sanitize before save' do
-    @rule.expects(:sanitize)
-    @rule.valid?
+    @rule.send(:sanitize)
+    refute @rule.discount > 1, 'Sanitize is not called on rule'
+    assert_equal(@rule.discount, 0.5)
   end
 end

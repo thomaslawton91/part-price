@@ -5,6 +5,11 @@ class DiscountedPartTest < ActiveSupport::TestCase
     @part = discounted_parts :valid
   end
 
+  def teardown
+    DiscountedPart.delete_all
+    @part = nil
+  end
+
   test 'valid part' do
     assert @part.valid?
   end
