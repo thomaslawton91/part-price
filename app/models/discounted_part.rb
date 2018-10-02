@@ -1,4 +1,6 @@
 class DiscountedPart < ApplicationRecord
+  belongs_to :rule
+
   validates :price, presence: true
   validates :sku_label, presence: true
   validates :reporting_make, presence: true

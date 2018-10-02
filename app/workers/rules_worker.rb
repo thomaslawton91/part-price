@@ -36,8 +36,9 @@ class RulesWorker
       part.category_name = attributes['category_name']
       part.sub_category_name = attributes['sub_category_name']
       part.functional_name = attributes['functional_name']
+      part.rule_id = rule_id
       if DiscountedPart.exists?(sku_label: attributes['sku_label'])
-        DiscountedPart.update_all({price: part.price})
+        DiscountedPart.update_all(price: part.price, rule_id: part.rule_id)
       else
         part.save
       end

@@ -6,7 +6,6 @@ class SkuTest < ActiveSupport::TestCase
   end
 
   def teardown
-    Sku.delete_all
     @sku = nil
   end
 

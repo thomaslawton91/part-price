@@ -6,7 +6,6 @@ class RuleTest < ActiveSupport::TestCase
   end
 
   def teardown
-    Rule.delete_all
     @rule = nil
   end
 

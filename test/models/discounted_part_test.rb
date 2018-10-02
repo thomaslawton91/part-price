@@ -6,7 +6,6 @@ class DiscountedPartTest < ActiveSupport::TestCase
   end
 
   def teardown
-    DiscountedPart.delete_all
     @part = nil
   end
 

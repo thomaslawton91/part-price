@@ -1,8 +1,10 @@
 class Rule < ApplicationRecord
+  has_many :discounted_parts
+
   validates :relative_price, presence: true
   validates :discount, presence: true
 
-  before_save :sanitize
+  before_create :sanitize
 
   private
 
